@@ -29,8 +29,8 @@ scoresAnovaF = pd.DataFrame({"feature": x.columns, "score": anovaFBestFeatures.s
 scoresAnovaF = scoresAnovaF.sort_values(by="score")
 print(scoresAnovaF)
 
-# Chose to drop the column for resting blood pressure after looking at the graphs and the
-# scores from SelectKBest
+# Dropping the columns for fasting blood sugar, resting ECG results, and resting blood pressure after
+# looking at the graphs and the scores from SelectKBest
 x_bestTenFeatures_train = x_train.drop(["fbs", "restecg", "trestbps"], axis=1)
 x_bestTenFeatures_test = x_test.drop(["fbs", "restecg", "trestbps"], axis=1)
 
